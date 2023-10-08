@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Recharge de compte</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Accueil</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/recharge_compte/">Recharge de compte</a>
+                </li>
+                <!-- Ajoutez d'autres liens de navigation au besoin -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Recharge de compte</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-group row">
+                <label for="{{ form.nom_utilisateur.id_for_label }}" class="col-sm-3 col-form-label">Nom d'utilisateur:</label>
+                <div class="col-sm-9">
+                    {{ form.nom_utilisateur }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="{{ form.montant.id_for_label }}" class="col-sm-3 col-form-label">Montant:</label>
+                <div class="col-sm-9">
+                    {{ form.montant }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="{{ form.numero_compte_a_debiter.id_for_label }}" class="col-sm-3 col-form-label">Numéro de compte à débiter:</label>
+                <div class="col-sm-9">
+                    {{ form.numero_compte_a_debiter }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="{{ form.type_mobile_money.id_for_label }}" class="col-sm-3 col-form-label">Type de Mobile Money:</label>
+                <div class="col-sm-9">
+                    {{ form.type_mobile_money }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-9 offset-sm-3">
+                    <button type="submit" class="btn btn-primary">Recharger</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

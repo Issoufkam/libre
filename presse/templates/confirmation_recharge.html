@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Confirmation de Recharge</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Confirmation de Recharge</h2>
+        <p class="success-message">La recharge a été effectuée avec succès.</p>
+        <div class="details">
+            <p>Détails de la recharge :</p>
+            <ul>
+                <li><strong>Nom d'utilisateur :</strong> {{ nom_utilisateur }}</li>
+                <li><strong>Montant :</strong> {{ montant }} FCFA</li>
+                <li><strong>Numéro de compte à débiter :</strong> {{ numero_compte_a_debiter }}</li>
+                <li><strong>Type de Mobile Money :</strong> {{ type_mobile_money }}</li>
+            </ul>
+        </div>
+        <p>Merci pour votre recharge.</p>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
